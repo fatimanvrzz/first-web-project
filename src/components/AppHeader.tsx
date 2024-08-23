@@ -4,7 +4,7 @@ const AppHeader: React.FC = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     const handleScroll = () => {
-        const position = window.pageYOffset;
+        const position = window.scrollY;
         setScrollPosition(position);
     };
 
@@ -17,24 +17,21 @@ const AppHeader: React.FC = () => {
     }, []);
 
     return (
-        <div className={`flex items-center w-screen h-20 md:bg-transparent bg-white transition-all border-2 
-            ${scrollPosition > 110 ? "animate-header-fade-down fixed" : "static"}`}>
-            <div className="flex flex-row items-center justify-between px-10 w-full">
-                <img src="" alt="Logo" className="w-20 aspect-auto" />
-                <BurgerMenu className="md:hidden" />
-            </div>
-        </div>
+        <>
+            <MobileHeader scrollPosition={scrollPosition} className="flex sm:hidden" />
+            <TabletHeader scrollPosition={scrollPosition} className="hidden sm:flex xl:hidden" />
+        </>
     )
 }
 
 export default AppHeader;
 
-const BurgerMenu: React.FC<{ className?: string }> = (props) => {
-    const burgerLine: ReactNode = <div className="bg-purple-500 w-full h-1 rounded" />
+const BurgerMenu: React.FC<{ className?: string, colorEnum: ColorEnum }> = (props) => {
+    const burgerLine: ReactNode = <div className={`${getBackgroundColor(props.colorEnum)} w-full h-1`} />
 
     return (
-        <div className={`border-2 rounded border-purple-500 w-10 aspect-square flex 
-            flex-col items-center justify-center gap-1 px-1 ${props.className}`}>
+        <div className={`border-2 ${getBorderColor(props.colorEnum)} w-10 aspect-square flex 
+            flex-col items-center justify-center gap-1 px-2 cursor-pointer ${props.className}`}>
             {burgerLine}
             {burgerLine}
             {burgerLine}
@@ -42,3 +39,53 @@ const BurgerMenu: React.FC<{ className?: string }> = (props) => {
     )
 }
 
+const MobileHeader: React.FC<{ scrollPosition: number, className?: string }> = (props) => {
+    return (
+        <div className={`items-center w-screen h-20 bg-white transition-all 
+            ${props.scrollPosition > 110 ? "animate-header-fade-down fixed" : "static"} ${props.className}`}>
+            <div className="flex flex-row items-center justify-between px-10 w-full">
+                <img src="" alt="Logo" className="w-20 aspect-auto" />
+                <BurgerMenu colorEnum={ColorEnum.Primary} />
+            </div>
+        </div>
+    )
+}
+
+const TabletHeader: React.FC<{ scrollPosition: number, className?: string }> = (props) => {
+    return (
+        <div className={`items-center w-screen h-20 bg-transparent transition-all 
+            ${props.scrollPosition > 110 ? "animate-header-fade-down fixed" : "static"} ${props.className}`}>
+            <div className="flex flex-row items-center justify-between px-10 w-full">
+                <img src="" alt="Logo" className="w-20 aspect-auto" />
+                <BurgerMenu colorEnum={ColorEnum.Secondary} />
+            </div>
+        </div>
+    )
+}
+
+function getBorderColor(colorEnum: ColorEnum): string {
+    switch (colorEnum) {
+        case ColorEnum.Primary:
+            return "border-primary"
+        case ColorEnum.Secondary:
+            return "border-secondary"
+        default:
+            return ""
+    }
+}
+
+function getBackgroundColor(colorEnum: ColorEnum): string {
+    switch (colorEnum) {
+        case ColorEnum.Primary:
+            return "bg-primary"
+        case ColorEnum.Secondary:
+            return "bg-secondary"
+        default:
+            return ""
+    }
+}
+
+enum ColorEnum {
+    Primary,
+    Secondary,
+}

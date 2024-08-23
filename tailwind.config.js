@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary': '#1c19a0',
+        'secondary': '#FFAE25',
+      },
       animation: {
         'header-fade-down': 'headerFadeDown 300ms ease-in-out',
       },
