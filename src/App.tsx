@@ -1,12 +1,17 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import IndexPage from './pages';
 import React, { ReactElement } from 'react';
 import AppHeader from './components/AppHeader';
+import IndexPage from './pages';
+import AboutUsPage from './pages/AboutUs';
 
 const routes: { Path: string, Element: ReactElement }[] = [
   {
     Path: "/",
     Element: <IndexPage />
+  },
+  {
+    Path: "/about",
+    Element: <AboutUsPage />
   }
 ]
 
