@@ -53,8 +53,8 @@ const MobileHeader: React.FC<{ scrollPosition: number, className?: string }> = (
 
 const TabletHeader: React.FC<{ scrollPosition: number, className?: string }> = (props) => {
     return (
-        <div className={`items-center w-screen h-20 bg-transparent transition-all 
-            ${props.scrollPosition > 110 ? "animate-header-fade-down fixed" : "static"} ${props.className}`}>
+        <div className={`items-center w-screen h-20 transition-all 
+            ${props.scrollPosition > 110 ? "animate-header-fade-down fixed bg-white" : "static bg-transparent"} ${props.className}`}>
             <div className="flex flex-row items-center justify-between px-10 w-full">
                 <img src="" alt="Logo" className="w-20 aspect-auto" />
                 <BurgerMenu colorEnum={ColorEnum.Secondary} />
