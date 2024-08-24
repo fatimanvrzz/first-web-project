@@ -28,12 +28,17 @@ const IndexPage: React.FC = () => {
             </div>
             <div className="flex flex-col ">
                 <img src="https://zcube.in/hitup/img/bg/about-img.png" alt="" className=" w-64 mt-20 mb-7" />
-                <h2 className="w-60 font-notoSans text-2xl mt-10 ml-12 font-extrabold text-pretty">Let Us Find The Perfect Workout For You !</h2>
-                <img src="https://zcube.in/hitup/img/bg/circle-line.png" alt="" className="w-fit h-fit ml-12 mt-3" />
+                <h2 className="w-60 font-notoSans text-2xl mt-10 ml-6 font-extrabold text-pretty">Let Us Find The Perfect Workout For You !</h2>
+                <img src="https://zcube.in/hitup/img/bg/circle-line.png" alt="" className="w-fit h-fit ml-6 mt-3 mb-9" />
                 <div className="flex flex-col gap-10 w-screen px-6">
-                    <span className="text-pretty">Fusce orci ligula, tincidunt ut metus vel, venenatis aliquet tortor. Duis et consequat enim. Curabitur pulvinar, dolor at pulvinar molestie, augue massa volutpat felis, at rhoncus tortor velit vel diam. Cras ac suscipit metus.</span>
-                    <span className="text-pretty">Etiam fermentum ex orci, a ullamcorper erat tempor in. Nulla est ante, ullamcorper vitae dui vel, molestie feugiat sapien.</span>
-                    <span className="text-pretty">Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa consequat commodo eleifend ut velit. Vestibulum molestie nunc non libero posuere, quis pellentesque massa tempus.</span>
+                    <span className="text-pretty text-grey">Fusce orci ligula, tincidunt ut metus vel, venenatis aliquet tortor. Duis et consequat enim. Curabitur pulvinar, dolor at pulvinar molestie, augue massa volutpat felis, at rhoncus tortor velit vel diam. Cras ac suscipit metus.</span>
+                    <span className="text-pretty text-grey">Etiam fermentum ex orci, a ullamcorper erat tempor in. Nulla est ante, ullamcorper vitae dui vel, molestie feugiat sapien.</span>
+                    <span className="text-pretty text-grey">Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa consequat commodo eleifend ut velit. Vestibulum molestie nunc non libero posuere, quis pellentesque massa tempus.</span>
+                </div>
+                <div className="flex mx-5 my-7 ">
+                    <button className="w-max self-center px-7 py-3 text-white bg-secondary rounded-xl font-semibold font-notoSans  shadow-secondary shadow-all-around">
+                        Read More
+                    </button>
                 </div>
             </div>
         </div>
@@ -50,4 +55,4 @@ const AppointmentBookElement: React.FC<{ iconLink: string, iconAltText?: string,
             <input type="text" name={props.iconAltText} placeholder={props.placeholder} className="outline-none" />
         </div>
     )
-}
+}       

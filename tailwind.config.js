@@ -10,6 +10,7 @@ export default {
         'primary': '#1c19a0',
         'secondary': '#FFAE25',
         'purple': '#8368FF',
+        'grey': '#6D6D6D',
       },
       animation: {
         'header-fade-down': 'headerFadeDown 300ms ease-in-out',
