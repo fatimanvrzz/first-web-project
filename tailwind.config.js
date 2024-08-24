@@ -23,7 +23,10 @@ export default {
       fontFamily: {
         'sourceCod': ['"Source Code Pro"', 'monospace'],
         'notoSans': ['"Noto Sans"', 'sans-serif'],
-      }
+      },
+      boxShadow: {
+        'all-around': '3px 4px 15px #FFAE2566',
+      },
     },
   },
   plugins: [],
