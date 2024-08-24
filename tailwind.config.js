@@ -9,6 +9,7 @@ export default {
       colors: {
         'primary': '#1c19a0',
         'secondary': '#FFAE25',
+        'purple': '#8368FF',
       },
       animation: {
         'header-fade-down': 'headerFadeDown 300ms ease-in-out',
@@ -19,6 +20,10 @@ export default {
           '100%': { transform: "translateY(0px)" },
         }
       },
+      fontFamily: {
+        'sourceCod': ['"Source Code Pro"', 'monospace'],
+        'notoSans': ['"Noto Sans"', 'sans-serif'],
+      }
     },
   },
   plugins: [],
