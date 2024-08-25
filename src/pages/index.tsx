@@ -54,8 +54,8 @@ const IndexPage: React.FC = () => {
             Price: 25.99,
         },
         {
-            Title: "SLIVER",
-            IconUrl: "https://zcube.in/hitup/img/bg/price-icon1.png",
+            Title: "SILVER",
+            IconUrl: "https://zcube.in/hitup/img/bg/price-icon2.png",
             Services: [
                 "Personal Trainer",
                 "Service Locker Room",
@@ -64,11 +64,11 @@ const IndexPage: React.FC = () => {
                 "Yoga Classes",
                 "Health Checkup",
             ],
-            Price: 25.99,
+            Price: 99.99,
         },
         {
             Title: "GOLD",
-            IconUrl: "https://zcube.in/hitup/img/bg/price-icon1.png",
+            IconUrl: "https://zcube.in/hitup/img/bg/price-icon3.png",
             Services: [
                 "Personal Trainer",
                 "Service Locker Room",
@@ -77,7 +77,7 @@ const IndexPage: React.FC = () => {
                 "Yoga Classes",
                 "Health Checkup",
             ],
-            Price: 25.99,
+            Price: 149.99,
         },
 
     ];
@@ -217,15 +217,14 @@ const PricingItem: React.FC<{ data: PricingData }> = (props) => {
                     )
                 })}
             </ul>
-            <span>
-                $
-                <span className="text-secondary">
-                    {props.data.Price}
+            <span className="flex my-5">
+                <span className="text-secondary text-3xl font-bold items-start">
+                    ${props.data.Price}
                 </span>
-                / month
+                <span className="self-end text-neutral-500 ">/ Month</span>
             </span>
-            <button className="w-max self-center px-7 py-3 mb-24 text-white bg-secondary rounded-xl font-semibold font-noto-sans  shadow-secondary shadow-all-around">
-                Read More
+            <button className="w-max self-center px-7 py-3 mb-24  text-white bg-secondary rounded-xl font-semibold font-noto-sans  shadow-secondary shadow-all-around">
+                Choose Plan
             </button>
         </div>
     )
