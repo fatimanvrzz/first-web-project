@@ -6,6 +6,13 @@ type ServiceData = {
     IconUrl: string;
 };
 
+type PricingData = {
+    Title: string;
+    IconUrl: string;
+    Services: string[];
+    Price: number;
+}
+
 const IndexPage: React.FC = () => {
     const [activeServiceIndex, serActiveServiceIndex] = useState(0);
 
@@ -30,6 +37,49 @@ const IndexPage: React.FC = () => {
             Description: "Nam pellentesque, velit at sodales elementum, neque metus ultricies justo, eget varius diam justo ac ante.",
             IconUrl: "https://zcube.in/hitup/img/bg/s-icon4.png",
         },
+    ];
+
+    const prices: PricingData[] = [
+        {
+            Title: "BROWNS",
+            IconUrl: "https://zcube.in/hitup/img/bg/price-icon1.png",
+            Services: [
+                "Personal Trainer",
+                "Service Locker Room",
+                "Fitness Assessment",
+                "Morning Slot",
+                "Yoga Classes",
+                "Health Checkup",
+            ],
+            Price: 25.99,
+        },
+        {
+            Title: "SLIVER",
+            IconUrl: "https://zcube.in/hitup/img/bg/price-icon1.png",
+            Services: [
+                "Personal Trainer",
+                "Service Locker Room",
+                "Fitness Assessment",
+                "Morning Slot",
+                "Yoga Classes",
+                "Health Checkup",
+            ],
+            Price: 25.99,
+        },
+        {
+            Title: "GOLD",
+            IconUrl: "https://zcube.in/hitup/img/bg/price-icon1.png",
+            Services: [
+                "Personal Trainer",
+                "Service Locker Room",
+                "Fitness Assessment",
+                "Morning Slot",
+                "Yoga Classes",
+                "Health Checkup",
+            ],
+            Price: 25.99,
+        },
+
     ];
 
     return (
@@ -81,7 +131,7 @@ const IndexPage: React.FC = () => {
                     <span className="text-pretty text-grey">Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa consequat commodo eleifend ut velit.</span>
                     <span className="text-pretty text-grey">Aenean eleifend est eget eros molestie pretium. Curabitur varius velit in est elementum consectetur. Mauris in risus bibendum, laoreet ex at, lobortis risus. Nullam id massa eget ante finibus iaculis. Duis eget nisl ipsum. Vivamus ipsum urna, tristique vel arcu nec, elementum congue est. Nullam vitae aliquet turpis.</span>
                 </div>
-                <div className="flex flex-col gap-10 mt-20">
+                <div className="flex flex-col gap-10 mt-20 w-screen px-8">
                     {services.map((service, index) => {
                         return (
                             <ServiceItem isActive={index == activeServiceIndex} data={service} onClick={() => { serActiveServiceIndex(index) }} />
@@ -105,6 +155,13 @@ const IndexPage: React.FC = () => {
             <div className="flex flex-col items-center">
                 <p className="font-bold text-3xl mt-11 mb-5">Pricing Table</p>
                 <img src="https://zcube.in/hitup/img/bg/circle-line.png" alt="" className="flex mb-14" />
+                <div className="flex flex-col gap-10 items-center px-8 w-screen">
+                    {prices.map((pricing) => {
+                        return (
+                            <PricingItem data={pricing} />
+                        )
+                    })}
+                </div>
             </div>
         </div>
     );
@@ -124,7 +181,7 @@ const AppointmentBookElement: React.FC<{ iconLink: string, iconAltText?: string,
 
 const ServiceItem: React.FC<{ isActive?: boolean, onClick?: React.MouseEventHandler, data: ServiceData }> = (props) => {
     return (
-        <div className="w-fit mx-8 flex flex-col gap-6 font-noto-sans items-center border-2 p-5 pt-0 rounded-3xl text-center shadow-neutral-300 shadow-2xl"
+        <div className="w-full flex flex-col gap-6 font-noto-sans items-center border p-5 pt-0 rounded-3xl text-center shadow-neutral-300 shadow-2xl"
             onClick={props.onClick}>
             <div className={`flex items-center justify-center rounded-b-full w-16 h-20 ${props.isActive ? "bg-secondary" : "bg-purple"}`}>
                 <img src={props.data.IconUrl} alt={props.data.Title} className="aspect-auto w-10 transition-transform duration-700"
@@ -138,6 +195,38 @@ const ServiceItem: React.FC<{ isActive?: boolean, onClick?: React.MouseEventHand
             <span className="text-neutral-500">
                 {props.data.Description}
             </span>
+        </div>
+    )
+}
+
+const PricingItem: React.FC<{ data: PricingData }> = (props) => {
+    return (
+        <div className="flex flex-col w-full h-[649px] items-center bg-[url(https://zcube.in/hitup/img/bg/price-bg.png)] bg-cover border shadow-neutral-300 shadow-2xl overflow-hidden rounded-2xl">
+            <h1 className="text-center font-bold text-2xl text-white mt-10">
+                {props.data.Title}
+            </h1>
+            <div className="w-24 h-24 bg-light-purple rounded-full mt-8">
+                <img src={props.data.IconUrl} alt={props.data.Title} className="flex px-6 py-7" />
+            </div>
+            <ul className="text-center flex flex-col gap-4 mt-20">
+                {props.data.Services.map((service) => {
+                    return (
+                        <li>
+                            {service}
+                        </li>
+                    )
+                })}
+            </ul>
+            <span>
+                $
+                <span className="text-secondary">
+                    {props.data.Price}
+                </span>
+                / month
+            </span>
+            <button className="w-max self-center px-7 py-3 mb-24 text-white bg-secondary rounded-xl font-semibold font-noto-sans  shadow-secondary shadow-all-around">
+                Read More
+            </button>
         </div>
     )
 }
