@@ -22,8 +22,8 @@ export default {
         }
       },
       fontFamily: {
-        'sourceCod': ['"Source Code Pro"', 'monospace'],
-        'notoSans': ['"Noto Sans"', 'sans-serif'],
+        'source-cod': ['"Source Code Pro"', 'monospace'],
+        'noto-sans': ['"Noto Sans"', 'sans-serif'],
       },
       boxShadow: {
         'all-around': '3px 4px 15px #FFAE2566',
