@@ -18,8 +18,8 @@ const AppHeader: React.FC = () => {
 
     return (
         <>
-            <MobileHeader scrollPosition={scrollPosition} className="flex sm:hidden" />
-            <TabletHeader scrollPosition={scrollPosition} className="hidden sm:flex xl:hidden" />
+            <MobileHeader scrollPosition={scrollPosition} className="z-[9999] flex sm:hidden" />
+            <TabletHeader scrollPosition={scrollPosition} className="z-[9999] hidden sm:flex xl:hidden" />
         </>
     )
 }
