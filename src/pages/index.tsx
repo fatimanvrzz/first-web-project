@@ -174,12 +174,14 @@ const IndexPage: React.FC = () => {
             </div>
             <div className="flex flex-col">
                 <div className="bg-purple h-max w-screen text-pretty mt-36 py-20">
-                    <h2 className="flex flex-col w-64 font-extrabold text-white font-noto-sans text-4xl mt-20 ml-10 leading-tight">
-                        The Fitness You Will Enjoy With Our Workout
-                    </h2>
-                    <img className="w-fit aspect-auto ml-10 mt-3 mb-9" src="https://zcube.in/hitup/img/bg/circle-line-w.png" alt="" />
-                    <p className="flex w-64 mt-9 ml-10 text-white font-noto-sans ">Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa consequat commodo eleifend ut velit.</p>
-                    <p className="flex w-64 mt-4 ml-10 text-white font-noto-sans ">Aenean eleifend est eget eros molestie pretium. Curabitur varius velit in est elementum consectetur. Mauris in risus bibendum, laoreet ex at, lobortis risus. Nullam id massa eget ante finibus iaculis. Duis eget nisl ipsum. Vivamus ipsum urna, tristique vel arcu nec, elementum congue est. Nullam vitae aliquet turpis.</p>
+                    <div className="flex flex-col mx-10">
+                        <h2 className="flex flex-col font-extrabold text-white font-noto-sans text-4xl mt-20 leading-tight">
+                            The Fitness You Will Enjoy With Our Workout
+                        </h2>
+                        <img className="w-fit aspect-auto mt-3 mb-9" src="https://zcube.in/hitup/img/bg/circle-line-w.png" alt="" />
+                        <p className="flex mt-9 text-white font-noto-sans ">Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa consequat commodo eleifend ut velit.</p>
+                        <p className="flex mt-4 text-white font-noto-sans ">Aenean eleifend est eget eros molestie pretium. Curabitur varius velit in est elementum consectetur. Mauris in risus bibendum, laoreet ex at, lobortis risus. Nullam id massa eget ante finibus iaculis. Duis eget nisl ipsum. Vivamus ipsum urna, tristique vel arcu nec, elementum congue est. Nullam vitae aliquet turpis.</p>
+                    </div>
                     <div className="flex items-center justify-center bg-[url(https://zcube.in/hitup/img/bg/video-img.png)] mt-5 ml-10 h-60 bg-cover">
                         <img src="https://zcube.in/hitup/img/bg/play-icon.png" alt="play-button" className="aspect-auto h-16" />
                     </div>
