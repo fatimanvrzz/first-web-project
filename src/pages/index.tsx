@@ -163,6 +163,12 @@ const IndexPage: React.FC = () => {
                     })}
                 </div>
             </div>
+            <div className="bg-slate-50 w-screen mt-36">
+                <h2 className="w-64 text-3xl text-center font-noto-sans font-bold ml-6 mt-28">What Our Client Say’s</h2>
+                <img className="w-fit aspect-auto ml-28 mt-3 mb-9" src="https://zcube.in/hitup/img/bg/circle-line.png" alt="" />
+                
+                
+            </div>
         </div>
     );
 };
