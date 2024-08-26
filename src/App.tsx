@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import AppHeader from './components/AppHeader';
 import IndexPage from './pages';
 import AboutUsPage from './pages/AboutUs';
+import CardTestPage from './pages/CardTest';
 
 const routes: { Path: string, Element: ReactElement }[] = [
   {
@@ -12,6 +13,10 @@ const routes: { Path: string, Element: ReactElement }[] = [
   {
     Path: "/about",
     Element: <AboutUsPage />
+  },
+  {
+    Path: "/card",
+    Element: <CardTestPage />
   }
 ]
 
