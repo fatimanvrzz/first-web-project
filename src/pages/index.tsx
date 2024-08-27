@@ -114,13 +114,13 @@ const IndexPage: React.FC = () => {
         <div className="flex flex-col">
             <div className="flex flex-col">
                 <div className="bg-purple h-[40rem] w-screen text-justify">
-                    <h2 className="flex flex-col max-w-64 font-extrabold text-white font-noto-sans text-4xl mt-20 ml-10 leading-tight">
+                    <h2 className="flex flex-col font-extrabold text-white font-noto-sans text-4xl mt-20 mx-10 leading-tight">
                         Perfect Workout Coach For
                         <span>
                             Body Shape
                         </span>
                     </h2>
-                    <p className="flex max-w-64 mt-9 ml-10 text-white font-noto-sans ">Quisque leo augue, lobortis ac tellus nec, posuere ultricies nulla. Praesent massa odio, pellentesque in consectetur quis, volutpat sit amet erat.</p>
+                    <p className="flex mt-9 mx-10 text-white font-noto-sans ">Quisque leo augue, lobortis ac tellus nec, posuere ultricies nulla. Praesent massa odio, pellentesque in consectetur quis, volutpat sit amet erat.</p>
                     <div className="flex border-2 border-secondary bg-secondary text-white w-fit ml-10 mt-9 rounded-xl px-7 py-3 shadow-secondary shadow-all-around">
                         <p className="font-noto-sans tracking-wider text-sm">Learn More</p>
                     </div>
