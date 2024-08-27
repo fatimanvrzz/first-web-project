@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSwipeable } from "react-swipeable";
 
 type ServiceData = {
     Title: string;
@@ -19,8 +20,16 @@ type AppointmentData = {
     IconAltText: string;
 }
 
+type ClientCommentCardData = {
+    FullName: string;
+    Position: string;
+    Comment: string;
+    PhotoUrl: string;
+};
+
 const IndexPage: React.FC = () => {
     const [activeServiceIndex, serActiveServiceIndex] = useState(0);
+    const [currentClientCommentCardIndex, setCurrentClientCommentCardIndex] = useState(0);
 
     const appointments: AppointmentData[] = [
         {
@@ -109,6 +118,27 @@ const IndexPage: React.FC = () => {
             Price: 149.99,
         },
     ];
+
+    const clientCommentCards: ClientCommentCardData[] = [
+        {
+            FullName: "Louis Carlson",
+            Position: "CEO & Founder",
+            Comment: "Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum.",
+            PhotoUrl: "https://zcube.in/hitup/img/testimonial/testimonial-img.png",
+        },
+        {
+            FullName: "Louis Carlson",
+            Position: "CEO & Founder",
+            Comment: "Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum.",
+            PhotoUrl: "https://zcube.in/hitup/img/testimonial/testimonial-img.png",
+        },
+    ];
+
+    const CommentCardSwipeHandler = useSwipeable({
+        onSwipedLeft: () => setCurrentClientCommentCardIndex((prevIndex) => Math.min(prevIndex + 1, clientCommentCards.length - 1)),
+        onSwipedRight: () => setCurrentClientCommentCardIndex((prevIndex) => Math.max(prevIndex - 1, 0)),
+        trackMouse: true,
+    });
 
     return (
         <div className="flex flex-col">
@@ -201,6 +231,24 @@ const IndexPage: React.FC = () => {
             <div className="bg-slate-50 w-screen mt-36 flex flex-col items-center">
                 <h2 className="text-3xl text-center font-noto-sans font-bold ml-6 mt-28">What Our Client Say’s</h2>
                 <img className="w-fit aspect-auto mt-3 mb-9" src="https://zcube.in/hitup/img/bg/circle-line.png" alt="" />
+                <div className="flex flex-col gap-2 items-center">
+                    <div className="overflow-hidden mx-8" {...CommentCardSwipeHandler}>
+                        <div className="flex transition-transform duration-300 ease-in-out"
+                            style={{ transform: `translateX(-${currentClientCommentCardIndex * 100}%)` }}
+                        >
+                            {clientCommentCards.map((card, index) => (
+                                <ClientCommentCard key={index} data={card} />
+                            ))}
+                        </div>
+                    </div>
+                    <div className="flex flex-row gap-2">
+                        {clientCommentCards.map((_, index) => (
+                            <div className={`w-3 aspect-square rounded-full ${index == currentClientCommentCardIndex ? "bg-secondary" : "bg-purple"}`}
+                                onClick={() => { setCurrentClientCommentCardIndex(index) }}>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -208,6 +256,26 @@ const IndexPage: React.FC = () => {
 
 export default IndexPage;
 
+const ClientCommentCard: React.FC<{ data: ClientCommentCardData }> = (props) => {
+    return (
+        <div className="min-w-full h-56 bg-white text-center flex flex-row items-center rounded-2xl overflow-hidden">
+            <img src={props.data.PhotoUrl} alt={`${props.data.FullName} image`} className="absolute translate-x-7 aspect-auto w-24" />
+            <div className="bg-purple w-1/5 h-full flex items-center justify-center">
+            </div>
+            <div className="w-4/5 flex flex-col p-4 ml-9 text-left">
+                <p className="font-bold text-2xl">
+                    {props.data.FullName}
+                </p>
+                <p className="text-secondary">
+                    {props.data.Position}
+                </p>
+                <p className="text-neutral-500">
+                    {props.data.Comment}
+                </p>
+            </div>
+        </div>
+    );
+};
 
 const AppointmentBookElement: React.FC<{ data: AppointmentData }> = (props) => {
     return (
@@ -215,8 +283,8 @@ const AppointmentBookElement: React.FC<{ data: AppointmentData }> = (props) => {
             <img src={props.data.IconUrl} alt={props.data.IconAltText} className="aspect-auto h-fit" />
             <input type="text" placeholder={props.data.Placeholder} className="outline-none max-w-fit" />
         </div>
-    )
-}
+    );
+};
 
 const ServiceItem: React.FC<{ isActive?: boolean, onClick?: React.MouseEventHandler, data: ServiceData }> = (props) => {
     return (
@@ -235,8 +303,8 @@ const ServiceItem: React.FC<{ isActive?: boolean, onClick?: React.MouseEventHand
                 {props.data.Description}
             </span>
         </div>
-    )
-}
+    );
+};
 
 const PricingItem: React.FC<{ data: PricingData }> = (props) => {
     return (
@@ -267,5 +335,5 @@ const PricingItem: React.FC<{ data: PricingData }> = (props) => {
                 Choose Plan
             </button>
         </div>
-    )
-}
+    );
+};
