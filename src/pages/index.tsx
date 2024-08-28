@@ -143,8 +143,8 @@ const IndexPage: React.FC = () => {
                         </span>
                     </h2>
                     <p className="flex mt-9 mx-10 text-white font-noto-sans text-xl">Quisque leo augue, lobortis ac tellus nec, posuere ultricies nulla. Praesent massa odio, pellentesque in consectetur quis, volutpat sit amet erat.</p>
-                    <div className="flex border-2 border-secondary bg-secondary text-white w-fit ml-10 mt-9 rounded-xl px-7 py-3 shadow-secondary shadow-all-around">
-                        <p className="font-noto-sans tracking-wider text-sm">Learn More</p>
+                    <div className="flex border-2 border-secondary bg-secondary text-white w-fit ml-10 mt-9 rounded-xl px-7 py-3 shadow-secondary shadow-all-around  active:bg-purple active:border-purple active:shadow-purple">
+                        <p className="font-noto-sans tracking-wider text-sm ">Learn More</p>
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@ const IndexPage: React.FC = () => {
                             )
                         })}
                     </div>
-                    <button className="w-full self-center text-white bg-secondary rounded-xl h-20 font-semibold font-noto-sans">
+                    <button className="w-full self-center text-white bg-secondary rounded-xl h-20 font-semibold font-noto-sans  active:bg-purple">
                         Book Your Appointment
                     </button>
                 </div>
@@ -174,7 +174,7 @@ const IndexPage: React.FC = () => {
                     <span className="text-pretty text-grey">Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa consequat commodo eleifend ut velit. Vestibulum molestie nunc non libero posuere, quis pellentesque massa tempus.</span>
                 </div>
                 <div className="flex mx-5 my-7 ">
-                    <button className="w-max self-center px-7 py-3 mb-24 text-white bg-secondary rounded-xl font-semibold font-noto-sans  shadow-secondary shadow-all-around">
+                    <button className="w-max self-center px-7 py-3 mb-24 text-white bg-secondary rounded-xl  active:bg-purple active:shadow-purple font-semibold font-noto-sans  shadow-secondary shadow-all-around">
                         Read More
                     </button>
                 </div>
@@ -220,7 +220,7 @@ const IndexPage: React.FC = () => {
                     })}
                 </div>
             </div>
-            <div className="bg-slate-50 w-screen mt-36 flex flex-col items-center">
+            <div className=" w-screen mt-36 flex flex-col items-center">
                 <h2 className="text-3xl text-center font-noto-sans font-bold ml-6 mt-28">
                     What Our Client Say&#39;s
                 </h2>
@@ -232,6 +232,21 @@ const IndexPage: React.FC = () => {
                         )
                     })}
                 </div>
+            </div>
+            <div className="bg-purple h-[40rem] w-screen text-pretty mt-28 flex flex-col items-center px-10">
+                <h2 className="flex flex-col font-extrabold text-white font-noto-sans text-4xl mt-24 mb-10 leading-tight"> Subscribe To Our Newsletter For Latest Updates</h2>
+                <div className="flex flex-rowitems-center justify-between w-full bg-white rounded-full h-14 overflow-hidden pl-5 py-1 pr-1">
+                    <input type="email" placeholder="Email Address..." className="outline-none" />
+                    <button className="h-full bg-secondary text-white w-1/2 rounded-full flex flex-row items-center justify-between pl-5 active:bg-purple">
+                        Subscribe
+                        <div className="h-full aspect-square bg-white/20 rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="w-5 aspect-square" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+                <div className="h-px w-screen bg-white mt-10" />
             </div>
         </div>
     );
@@ -294,7 +309,7 @@ const PricingItem: React.FC<{ data: PricingData }> = (props) => {
                 </span>
                 <span className="self-end text-neutral-500 ">/ Month</span>
             </span>
-            <button className="w-max self-center px-7 py-3 mb-24  text-white bg-secondary rounded-xl font-semibold font-noto-sans  shadow-secondary shadow-all-around">
+            <button className="w-max self-center px-7 py-3 mb-24  text-white bg-secondary rounded-xl font-semibold font-noto-sans  active:bg-purple active:shadow-purple shadow-secondary shadow-all-around">
                 Choose Plan
             </button>
         </div>
@@ -312,7 +327,7 @@ const WhatOurClientItem: React.FC<{ data: WhatOurClientSay }> = (props) => {
                 <h4 className="justify-center w-60 mt-4 text-xl font-bold font-noto-sans"> {props.data.Title}</h4>
                 <p className="justify-center w-60 mt-4 text-base font-noto-sans text-neutral-500">{props.data.Description}</p>
                 <div className="flex flex-row">
-                    <span className="flex flex-row items-center w-36 h-10 gap-2 text-secondary px-4  my-4 mr-32">Read More
+                    <span className="flex flex-row items-center w-36 h-10 gap-2 text-secondary px-4  my-4 mr-32  active:text-purple">Read More
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                         </svg>
