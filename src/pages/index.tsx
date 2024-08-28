@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaChevronRight } from "react-icons/fa";
 
 type ServiceData = {
     Title: string;
