@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaChevronRight } from "react-icons/fa";
 
 type ServiceData = {
     Title: string;
@@ -12,12 +13,17 @@ type PricingData = {
     Services: string[];
     Price: number;
 }
-
 type AppointmentData = {
     Placeholder: string;
     IconUrl: string;
     IconAltText: string;
 }
+type WhatOurClientSay = {
+    ImageUrl: string;
+    Title: string;
+    Description: string;
+}
+
 
 const IndexPage: React.FC = () => {
     const [activeServiceIndex, serActiveServiceIndex] = useState(0);
@@ -109,18 +115,35 @@ const IndexPage: React.FC = () => {
             Price: 149.99,
         },
     ];
+    const client: WhatOurClientSay[] = [
+        {
+            ImageUrl: "https://zcube.in/hitup/img/blog/blog_img01.jpg",
+            Title: "Praesent justo mauris, tincidunt vitae nisi ultricies.",
+            Description: "Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum.",
+        },
+        {
+            ImageUrl: "https://zcube.in/hitup/img/blog/blog_img02.jpg",
+            Title: "Monthly eraesent justo mauris, vitae nisi ultricies.",
+            Description: "Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum.",
+        },
+        {
+            ImageUrl: "https://zcube.in/hitup/img/blog/blog_img03.jpg",
+            Title: "User Experience Psychology And Performance Smashing.",
+            Description: "Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum.",
+        },
+    ]
 
     return (
         <div className="flex flex-col">
             <div className="flex flex-col">
-                <div className="bg-purple h-[40rem] w-screen text-justify">
+                <div className="bg-purple h-[40rem] w-screen text-pretty">
                     <h2 className="flex flex-col font-extrabold text-white font-noto-sans text-4xl mt-20 mx-10 leading-tight">
                         Perfect Workout Coach For
                         <span>
                             Body Shape
                         </span>
                     </h2>
-                    <p className="flex mt-9 mx-10 text-white font-noto-sans ">Quisque leo augue, lobortis ac tellus nec, posuere ultricies nulla. Praesent massa odio, pellentesque in consectetur quis, volutpat sit amet erat.</p>
+                    <p className="flex mt-9 mx-10 text-white font-noto-sans text-xl">Quisque leo augue, lobortis ac tellus nec, posuere ultricies nulla. Praesent massa odio, pellentesque in consectetur quis, volutpat sit amet erat.</p>
                     <div className="flex border-2 border-secondary bg-secondary text-white w-fit ml-10 mt-9 rounded-xl px-7 py-3 shadow-secondary shadow-all-around">
                         <p className="font-noto-sans tracking-wider text-sm">Learn More</p>
                     </div>
@@ -203,6 +226,13 @@ const IndexPage: React.FC = () => {
                     What Our Client Say&#39;s
                 </h2>
                 <img className="w-fit aspect-auto mt-3 mb-9" src="https://zcube.in/hitup/img/bg/circle-line.png" alt="" />
+                <div className="">
+                    {client.map((saying) => {
+                        return (
+                            <WhatOurClientItem data={saying} />
+                        )
+                    })}
+                </div>
             </div>
         </div>
     );
@@ -227,7 +257,8 @@ const ServiceItem: React.FC<{ isActive?: boolean, onClick?: React.MouseEventHand
                 <img src={props.data.IconUrl} alt={props.data.Title} className="aspect-auto w-10 transition-transform duration-700"
                     style={{
                         transform: props.isActive ? 'rotateY(360deg)' : ""
-                    }} />
+                    }}
+                />
             </div>
             <span className="font-bold text-xl">
                 {props.data.Title}
@@ -270,3 +301,25 @@ const PricingItem: React.FC<{ data: PricingData }> = (props) => {
         </div>
     );
 };
+
+const WhatOurClientItem: React.FC<{ data: WhatOurClientSay }> = (props) => {
+    return (
+        <>
+            <div className="flex flex-col w-full items-center bg-cover shadow-neutral-300 
+         shadow-2xl overflow-hidden rounded-xl mt-10 ">
+                <div className="justify-center w-80">
+                    <img src={props.data.ImageUrl} />
+                </div>
+                <h4 className="justify-center w-60 mt-4 text-xl font-bold font-noto-sans"> {props.data.Title}</h4>
+                <p className="justify-center w-60 mt-4 text-base font-noto-sans text-neutral-500">{props.data.Description}</p>
+                <div className="flex flex-row">
+                    <span className="flex flex-row items-center w-36 h-10 gap-2 text-secondary px-4  my-4 mr-32">Read More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </>
+    )
+} 
