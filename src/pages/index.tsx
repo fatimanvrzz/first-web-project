@@ -285,6 +285,9 @@ const IndexPage: React.FC = () => {
                         </span>
                     </div>
                 </div>
+                <div className="flex flex-col">
+                    <p className="text-white font-noto-sans font-extrabold mt-2">Our Links</p>
+                </div>
 
             </div>
         </div>
