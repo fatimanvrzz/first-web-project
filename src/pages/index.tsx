@@ -201,8 +201,12 @@ const IndexPage: React.FC = () => {
                             The Fitness You Will Enjoy With Our Workout
                         </h2>
                         <img className="w-fit aspect-auto mt-3 mb-9" src="https://zcube.in/hitup/img/bg/circle-line-w.png" alt="" />
-                        <p className="flex mt-9 text-white font-noto-sans ">Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa consequat commodo eleifend ut velit.</p>
-                        <p className="flex mt-4 text-white font-noto-sans ">Aenean eleifend est eget eros molestie pretium. Curabitur varius velit in est elementum consectetur. Mauris in risus bibendum, laoreet ex at, lobortis risus. Nullam id massa eget ante finibus iaculis. Duis eget nisl ipsum. Vivamus ipsum urna, tristique vel arcu nec, elementum congue est. Nullam vitae aliquet turpis.</p>
+                        <p className="flex mt-9 text-white font-noto-sans ">
+                            Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa consequat commodo eleifend ut velit.
+                        </p>
+                        <p className="flex mt-4 text-white font-noto-sans ">
+                            Aenean eleifend est eget eros molestie pretium. Curabitur varius velit in est elementum consectetur. Mauris in risus bibendum, laoreet ex at, lobortis risus. Nullam id massa eget ante finibus iaculis. Duis eget nisl ipsum. Vivamus ipsum urna, tristique vel arcu nec, elementum congue est. Nullam vitae aliquet turpis.
+                        </p>
                     </div>
                     <div className="flex items-center justify-center bg-[url(https://zcube.in/hitup/img/bg/video-img.png)] mt-5 ml-10 h-60 bg-cover">
                         <img src="https://zcube.in/hitup/img/bg/play-icon.png" alt="play-button" className="aspect-auto h-16" />
@@ -235,8 +239,8 @@ const IndexPage: React.FC = () => {
             </div>
             <div className="bg-purple h-[40rem] w-screen text-pretty mt-28 flex flex-col px-10">
                 <h2 className="flex flex-col font-extrabold text-white font-noto-sans text-4xl mt-24 mb-10 leading-tight"> Subscribe To Our Newsletter For Latest Updates</h2>
-                <div className="flex flex-rowitems-center justify-between w-full bg-white rounded-full h-14 overflow-hidden pl-5 py-1 pr-1">
-                    <input type="email" placeholder="Email Address..." className="outline-none" />
+                <div className="self-center flex flex-row items-center justify-between w-full bg-white rounded-full h-14 overflow-hidden pl-5 py-1 pr-1">
+                    <input type="email" placeholder="Email Address..." className="outline-none w-1/2    " />
                     <button className="h-full bg-secondary text-white w-1/2 rounded-full flex flex-row items-center justify-between pl-5 active:bg-purple">
                         Subscribe
                         <div className="h-full aspect-square bg-white/20 rounded-full flex items-center justify-center">
@@ -246,25 +250,39 @@ const IndexPage: React.FC = () => {
                         </div>
                     </button>
                 </div>
-                <div className="h-px max-w-screen bg-white mt-10 text-pretty" />
-                <div className="flex flex-col mt-14">
-                    <img src="https://zcube.in/hitup/img/logo/w_logo.png" alt="" className="flex w-40" />
-                    <div className="flex flex-row items-center gap-3 my-8">
-                        <div className="bg-secondary rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16" className="w-9 h-full">
+                <div className="h-px w-screen bg-white mt-10 self-center" />
+                <div className="flex flex-col">
+                    <img src="https://zcube.in/hitup/img/logo/w_logo.png" alt="" className="flex w-40 mt-5" />
+                    <div className="flex flex-row items-center gap-3 my-3">
+                        <div className="bg-secondary rounded-full w-9 p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16" className="aspect-auto w-full">
                                 <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
                             </svg>
                         </div>
-                        <span className="flex flex-col leading-tight text-white">1800-121-3637 <p>+91 555 234-8765</p></span>
+                        <span className="flex flex-col leading-tight text-white">
+                            <p>
+                                1800-121-3637
+                            </p>
+                            <p>
+                                +91 555 234-8765
+                            </p>
+                        </span>
                     </div>
                     <div className="flex flex-row items-center gap-3 my-3">
-                        <div className="bg-secondary rounded-full h-8 ">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16"  className="w-9 h-full">
+                        <div className="bg-secondary rounded-full w-9 aspect-auto justify-center p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16" className="aspect-auto w-full">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
                             </svg>
                         </div>
-                        <span className="flex flex-col leading-tight text-white">info@example.com <p> sale@example.com</p></span>
+                        <span className="flex flex-col leading-tight text-white">
+                            <p>
+                                info@example.com
+                            </p>
+                            <p>
+                                sale@example.com
+                            </p>
+                        </span>
                     </div>
                 </div>
 
