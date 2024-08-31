@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 
 type ServiceData = {
     Title: string;
@@ -11,18 +11,32 @@ type PricingData = {
     IconUrl: string;
     Services: string[];
     Price: number;
-}
+};
+
 type AppointmentData = {
     Placeholder: string;
     IconUrl: string;
     IconAltText: string;
-}
+};
+
 type WhatOurClientSay = {
     ImageUrl: string;
     Title: string;
     Description: string;
-}
+};
 
+type LinkBoxData = {
+    Title: string;
+    Links: {
+        Text: string;
+        Link: string;
+    }[]
+};
+
+type IconBoxData = {
+    Link: string;
+    Icon: ReactElement;
+}
 
 const IndexPage: React.FC = () => {
     const [activeServiceIndex, serActiveServiceIndex] = useState(0);
@@ -114,6 +128,7 @@ const IndexPage: React.FC = () => {
             Price: 149.99,
         },
     ];
+
     const client: WhatOurClientSay[] = [
         {
             ImageUrl: "https://zcube.in/hitup/img/blog/blog_img01.jpg",
@@ -129,6 +144,77 @@ const IndexPage: React.FC = () => {
             ImageUrl: "https://zcube.in/hitup/img/blog/blog_img03.jpg",
             Title: "User Experience Psychology And Performance Smashing.",
             Description: "Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit elementum.",
+        },
+    ];
+
+    const IconBoxes: IconBoxData[] = [
+        {
+            Link: "/",
+            Icon:
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+                    <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z" />
+                </svg>
+        }
+    ];
+
+    const LinkBoxes: LinkBoxData[] = [
+        {
+            Title: "Our Links",
+            Links: [
+                {
+                    Link: "/",
+                    Text: "Partners",
+                },
+                {
+                    Link: "/",
+                    Text: "About Us",
+                },
+                {
+                    Link: "/",
+                    Text: "Career",
+                },
+                {
+                    Link: "/",
+                    Text: "Reviews",
+                },
+                {
+                    Link: "/",
+                    Text: "Terms & Conditions",
+                },
+                {
+                    Link: "/",
+                    Text: "Help",
+                },
+            ],
+        },
+        {
+            Title: "Other Links",
+            Links: [
+                {
+                    Link: "/",
+                    Text: "Home",
+                },
+                {
+                    Link: "/",
+                    Text: "About Us",
+                },
+                {
+                    Link: "/",
+                    Text: "Services",
+                },
+                {
+                    Link: "/",
+                    Text: "Project",
+                },
+                {
+                    Link: "/",
+                    Text: "Our Team",
+                },
+                {
+                    Link: "/",
+                    Text: "Latest Blog",
+                },
+            ],
         },
     ]
 
@@ -237,7 +323,7 @@ const IndexPage: React.FC = () => {
                     })}
                 </div>
             </div>
-            <div className="bg-purple h-[40rem] w-screen text-pretty mt-28 flex flex-col px-10">
+            <div className="bg-purple w-screen text-pretty mt-28 flex flex-col px-10">
                 <h2 className="flex flex-col font-extrabold text-white font-noto-sans text-4xl mt-24 mb-10 leading-tight"> Subscribe To Our Newsletter For Latest Updates</h2>
                 <div className="self-center flex flex-row items-center justify-between w-full bg-white rounded-full h-14 overflow-hidden pl-5 py-1 pr-1">
                     <input type="email" placeholder="Email Address..." className="outline-none w-1/2    " />
@@ -251,8 +337,8 @@ const IndexPage: React.FC = () => {
                     </button>
                 </div>
                 <div className="h-px w-screen bg-white mt-10 self-center" />
-                <div className="flex flex-col">
-                    <img src="https://zcube.in/hitup/img/logo/w_logo.png" alt="" className="flex w-40 mt-5" />
+                <div className="flex flex-col text-sm">
+                    <img src="https://zcube.in/hitup/img/logo/w_logo.png" alt="" className="w-32 mt-5" />
                     <div className="flex flex-row items-center gap-3 my-3">
                         <div className="bg-secondary rounded-full w-9 p-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16" className="aspect-auto w-full">
@@ -285,10 +371,29 @@ const IndexPage: React.FC = () => {
                         </span>
                     </div>
                 </div>
-                <div className="flex flex-col">
-                    <p className="text-white font-noto-sans font-extrabold mt-2">Our Links</p>
+                <div>
+                    {LinkBoxes.map((box) => {
+                        return (
+                            <LinkBoxItem data={box} />
+                        )
+                    })}
+                    <p className="mt-7 text-white text-sm">
+                        Fusce orci ligula, tincidunt ut metus vel, venenatis aliquet tortor. Duis et consequat enim. Curabitur pulvinar, dolor at pulvinar molestie, augue massa volutpat felis, at rhoncus
+                        tortor velit vel diam. Cras ac suscipit metus. Cras vitae quam eget risus efficitur malesuada. Praesent condimentum lacus nisi, eu venenatis purus eleifend sit amet.
+                        Vivamus ac enim vitae erat scelerisque ullamcorper. Ut id pretium sem. Proin ac consectetur orci.
+                    </p>
                 </div>
-
+                <div>
+                    {IconBoxes.map((box) => {
+                        return (
+                            <div className="p-2 bg-white/30 rounded-full w-10 aspect-square flex items-center justify-center">
+                                <a href={box.Link} className="w-full">
+                                    {box.Icon}
+                                </a>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     );
@@ -377,5 +482,28 @@ const WhatOurClientItem: React.FC<{ data: WhatOurClientSay }> = (props) => {
                 </div>
             </div>
         </>
+    );
+};
+
+const LinkBoxItem: React.FC<{ data: LinkBoxData }> = (props) => {
+    return (
+        <div className="flex flex-col w-full gap-5 mt-5 text-sm">
+            <div className="flex flex-col items-start">
+                <p className="text-white font-noto-sans font-bold text-lg">
+                    Our links
+                </p>
+                <div className="bg-secondary w-full h-2 rounded" />
+            </div>
+
+            <div className="flex flex-col gap-4 text-white">
+                {props.data.Links.map((link) => {
+                    return (
+                        <a href={link.Link}>
+                            {link.Text}
+                        </a>
+                    )
+                })}
+            </div>
+        </div>
     )
-} 
+};
