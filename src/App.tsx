@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import React, { ReactElement } from 'react';
-import AppHeader from './components/AppHeader';
 import IndexPage from './pages';
+import AppHeader from './components/AppHeader';
 import AboutUsPage from './pages/AboutUs';
 import CardTestPage from './pages/CardTest';
 

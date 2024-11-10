@@ -15,7 +15,7 @@ type PricingData = {
 
 type AppointmentData = {
     Placeholder: string;
-    IconUrl: string;
+    IconUrl: string;    
     IconAltText: string;
 };
 
