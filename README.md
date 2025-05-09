@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+#  My First Web Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my **first web project**, built as a training exercise. Through this project, I learned how to use **Tailwind CSS** and **TypeScript** within a React + Vite setup.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Vite**
 
-## Expanding the ESLint configuration
+## 📱 Responsive Design
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This is my **first time using Tailwind CSS**, and I was able to make the project work well on **mobile devices**.  
+However, the **desktop responsiveness** is not fully implemented yet.  
+This is something I plan to improve in future versions.
 
-- Configure the top-level `parserOptions` property like this:
+## 🧩 Project Overview
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- A simple **landing page** layout
+- Styled with **Tailwind utility classes**
+- Contains basic **sections** similar to a product or service presentation page
+- All components written in **TypeScript**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 📈 What I Learned
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Setting up a React project using **Vite**
+- Writing and styling components with **Tailwind CSS**
+- Using **TypeScript** in a frontend project
+- Basic project structure and component organization
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🔧 Future Improvements
+
+- Add full **responsive design** for larger screens (tablet & desktop)
+- Improve **code structure**
+- Add **animations** and **interactivity**
+- Deploy the site publicly (e.g., Vercel, Netlify)
+
+---
+
+Thanks for checking out my project! 🚀
