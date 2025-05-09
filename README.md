@@ -1,41 +1,39 @@
-#  My First Web Project
+#  Mənim İlk Veb Layihəm
 
-This is my **first web project**, built as a training exercise. Through this project, I learned how to use **Tailwind CSS** and **TypeScript** within a React + Vite setup.
+Bu mənim ilk veb layihəmdir və təlim məqsədilə hazırlanmışdır. Layihə vasitəsilə **Tailwind CSS** və **TypeScript** istifadə etməyi öyrəndim. Layihə **React + Vite** quruluşu üzərində qurulub.
 
-## 🚀 Technologies Used
+## 🚀 İstifadə olunan texnologiyalar
 
 - **React**
 - **TypeScript**
 - **Tailwind CSS**
 - **Vite**
 
-## 📱 Responsive Design
+## 📱 Responsiv Dizayn
 
-This is my **first time using Tailwind CSS**, and I was able to make the project work well on **mobile devices**.  
-However, the **desktop responsiveness** is not fully implemented yet.  
-This is something I plan to improve in future versions.
+Tailwind CSS-i ilk dəfə istifadə etdiyim üçün yalnız mobil versiyanı hazırlaya bildim, lakin **mobil versiyadan masaüstü versiyaya keçidi düzgün qura bilmədim**.  
 
-## 🧩 Project Overview
+## 🧩 Layihə Haqqında
 
-- A simple **landing page** layout
-- Styled with **Tailwind utility classes**
-- Contains basic **sections** similar to a product or service presentation page
-- All components written in **TypeScript**
+- Sadə bir **landing page** quruluşu
+- Tailwind vasitəsilə tərtibat
+- Əsas bölmələr mövcuddur
+- Komponentlər **TypeScript** ilə yazılıb
 
-## 📈 What I Learned
+## 📈 Öyrəndiklərim
 
-- Setting up a React project using **Vite**
-- Writing and styling components with **Tailwind CSS**
-- Using **TypeScript** in a frontend project
-- Basic project structure and component organization
+- **Vite** ilə React layihəsi qurmaq
+- **Tailwind** siniflərindən istifadə
+- **TypeScript** ilə komponent yazmaq
+- Sadə layihə strukturu yaratmaq
 
-## 🔧 Future Improvements
+## 🔧 Gələcəkdə planlaşdırılanlar
 
-- Add full **responsive design** for larger screens (tablet & desktop)
-- Improve **code structure**
-- Add **animations** and **interactivity**
-- Deploy the site publicly (e.g., Vercel, Netlify)
+- Desktop üçün tam **responsiv dizayn**
+- Kodu daha səliqəli strukturlaşdırmaq
+- **Animasiyalar** və **interaktivlik** əlavə etmək
+- Layihəni onlayn yayımlamaq (Vercel, Netlify və s.)
 
 ---
 
-Thanks for checking out my project! 🚀
+Layihə ilə tanış olduğunuz üçün təşəkkürlər! 🙌
